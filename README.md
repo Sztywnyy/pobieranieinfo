@@ -1,24 +1,8 @@
-# pobieranieinfo
-
-## Project setup
+## Pobierz plik php
 ```
-npm install
+fetchData.php
 ```
-
-### Compiles and hot-reloads for development
+## Pobierz plik sql
 ```
-npm run serve
+praktyki.sql
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

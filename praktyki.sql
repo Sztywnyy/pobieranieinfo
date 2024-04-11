@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 10, 2024 at 05:00 PM
--- Wersja serwera: 10.4.32-MariaDB
--- Wersja PHP: 8.0.30
+-- Host: localhost:3306
+-- Czas generowania: 11 Kwi 2024, 01:50
+-- Wersja serwera: 5.7.24
+-- Wersja PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `praktyki`
+-- Baza danych: `praktyki`
 --
 
 -- --------------------------------------------------------
@@ -30,12 +30,12 @@ SET time_zone = "+00:00";
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `title` varchar(100) DEFAULT NULL,
-  `content` text DEFAULT NULL,
+  `content` text,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `post`
+-- Zrzut danych tabeli `post`
 --
 
 INSERT INTO `post` (`id`, `title`, `content`, `user_id`) VALUES
@@ -67,10 +67,10 @@ CREATE TABLE `user` (
   `firstname` varchar(50) DEFAULT NULL,
   `lastname` varchar(50) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Zrzut danych tabeli `user`
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `password`) VALUES
@@ -108,27 +108,27 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
--- AUTO_INCREMENT for table `post`
+-- AUTO_INCREMENT dla tabeli `post`
 --
 ALTER TABLE `post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- Constraints for dumped tables
+-- Ograniczenia dla zrzutów tabel
 --
 
 --
--- Constraints for table `post`
+-- Ograniczenia dla tabeli `post`
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
